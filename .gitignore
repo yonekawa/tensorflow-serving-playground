@@ -99,3 +99,13 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# IDEA
+.idea/
+
+# Mac
+.DS_Store
+
+# playground
+models/
+MNIST_data/
