@@ -5,7 +5,7 @@ A playground of [Tensorflow Serving](https://www.tensorflow.org/serving)
 
 ```bash
 $ pip install -r requirements.txt
-$ python export/mnist_tensorflow.py --model_version=2 models/mnist
+$ python export/mnist_tensorflow.py --model_version=1 models/mnist
 ```
 
 ### (WIP)VGG - Keras
