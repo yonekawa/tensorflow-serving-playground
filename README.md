@@ -25,6 +25,16 @@ $ docker run -d -v $(pwd):/tmp -p 9000:9000 tensorflow-model-server tensorflow_m
 
 ## Request to prefictions
 
+You need to setup [grpc/grpc-go](https://github.com/grpc/grpc-go).
+
+```bash
+$ git clone --recursive https://github.com/tensorflow/serving.git
+$ protoc -I=serving -I serving/tensorflow --go_out=plugins=grpc:$GOPATH/src serving/tensorflow_serving/apis/*.proto
+$ protoc -I=serving/tensorflow --go_out=plugins=grpc:$GOPATH/src serving/tensorflow/tensorflow/core/framework/*.proto
+$ protoc -I=serving/tensorflow --go_out=plugins=grpc:$GOPATH/src serving/tensorflow/tensorflow/core/protobuf/{saver,meta_graph}.proto
+$ protoc -I=serving/tensorflow --go_out=plugins=grpc:$GOPATH/src serving/tensorflow/tensorflow/core/example/*.proto
+```
+
 You can use [myleott/mnist_png](https://github.com/myleott/mnist_png)
 
 ```bash
